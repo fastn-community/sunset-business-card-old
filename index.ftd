@@ -154,6 +154,7 @@ width if { ftd.device == "mobile" }: fill-container
 
 -- ftd.row:
 width if { ftd.device == "mobile" }: fill-container
+spacing if { ftd.device == "mobile" }: space-around
 
 -- ftd.column:
 width: fill-container
@@ -161,7 +162,8 @@ id: $details.card-id
 
 -- ftd.column:
 if: { !details.open }
-width: fill-container
+width.fixed.percent if { ftd.device == "mobile" }: 98
+width.fixed.percent: 100
 height: fill-container
 
 -- front: $details.name
@@ -180,7 +182,8 @@ website: $details.website
 
 -- ftd.column:
 if: { details.open }
-width: fill-container
+width.fixed.percent if { ftd.device == "mobile" }: 98
+width.fixed.percent: 100
 height: fill-container
 
 -- back: $details.name
@@ -210,6 +213,7 @@ open-in-new-tab: true
 -- ftd.column:
 spacing.fixed.px: 12
 align-content: center
+margin-left.px if { ftd.device == "desktop" }: 24
 
 -- ftd.image:
 if: { !details.mouse-in }
