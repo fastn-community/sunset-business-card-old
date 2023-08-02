@@ -1,7 +1,7 @@
 -- site-doc.doc-home: Contribute to Business Card
 license-url: https://github.com/fastn-community/business-card/blob/main/LICENSE
-current-package: fastn-community.github.io/business-card
-site-title: Business Card
+current-package: fastn-community.github.io/sunset-business-card
+site-title: Sunset Business Card
 github-url: https://github.com/fastn-community/business-card
 
 `business-card` is an [open source](https://opensource.guide/) fastn component.
