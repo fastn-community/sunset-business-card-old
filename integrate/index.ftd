@@ -1,12 +1,12 @@
--- import: fastn-community.github.io/business-card/docs
--- import: fastn-community.github.io/business-card
+-- import: fastn-community.github.io/sunset-business-card/docs
+-- import: fastn-community.github.io/sunset-business-card
 -- import: fastn-stack.github.io/fastn-js/utils
 -- import: fastn-community.github.io/bling/note
 
 -- site-doc.doc-home: Add business card to your existing `fastn` site
 show-tabs: false
 github-url: https://github.com/fastn-community/business-card
-site-title: Add Business Card to `fastn` site
+site-title: Add Sunset Business Card to `fastn` site
 
 This step-by-step guide will help you to `integrate` your personalised 
 business card into your existing `fastn repository` on GitHub. 
@@ -59,7 +59,7 @@ margin-vertical.px: 16
 -- cb.code:
 lang: ftd
 
-\-- fastn.dependency: fastn-community.github.io/business-card
+\-- fastn.dependency: fastn-community.github.io/sunset-business-card
 
 -- tf.markdown:
 
@@ -144,7 +144,7 @@ margin-vertical.px: 16
 -- cb.code:
 lang: ftd
 
-\-- import: fastn-community.github.io/business-card
+\-- import: fastn-community.github.io/sunset-business-card
 
 -- tf.markdown:
 
@@ -177,7 +177,7 @@ margin-vertical.px: 16
 -- cb.code:
 lang: ftd
 
-\-- business-card.details: John Doe
+\-- sunset-business-card.details: John Doe
 company-name: John Doe Pvt. Ltd.
 title: Software Developer
 phone-no: +91 12345 99999
@@ -243,7 +243,7 @@ margin-bottom.px: 6
 -- cb.code: Example
 lang: ftd
 
-\-- business-card.details: Ajit Garg
+\-- sunset-business-card.details: Ajit Garg
 company-name: FifthTry Pvt. Ltd.
 title: Devrel
 phone-no: +91 12345 99999

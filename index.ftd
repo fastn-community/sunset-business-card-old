@@ -1,29 +1,28 @@
--- import: fastn-community.github.io/business-card/docs
--- import: fastn-community.github.io/business-card
+-- import: fastn-community.github.io/sunset-business-card/docs
+-- import: fastn-community.github.io/sunset-business-card
 -- import: fastn-stack.github.io/fastn-js/utils
 -- import: fastn-community.github.io/bling/note
 
 
 
--- site-doc.doc-home: Business Card
-current-package: fastn-community.github.io/business-card
+-- site-doc.doc-home: Sunset Business Card
+current-package: fastn-community.github.io/sunset-business-card
 show-tabs: false
 github-url: https://github.com/fastn-community/business-card
-site-title: Business Card
+site-title: Sunset Business Card
 
 This guide will demonstrate how to make simple business cards using `fastn`. 
 
 `fastn` is a beginner friendly web-development platform. 
 Check out [`fastn`](https://fastn.com/).
 
--- business-card.details: John Doe
+-- sunset-business-card.details: John Doe
 company-name: John Doe Pvt. Ltd.
 title: Software Developer
 phone-no: +91 12345 99999
 email: john@johndoe.com
 address: 123, Block No. A-123, Times Square, Bangalore - 123456
-logo: $assets.files.assets.ipsum-logo.svg
-company-slogan: If you can type you can code
+logo: $assets.files.assets.fastn-logo.svg
 website: www.johndoe.com
 
 -- site-doc.header: Create your business card
@@ -94,14 +93,13 @@ link: integrate/
 
 -- cb.code: Example usage
 
-\-- business-card.details: John Doe
+\-- sunset-business-card.details: John Doe
 company-name: John Doe Pvt. Ltd.
 title: Software Developer
 phone-no: +91 12345 99999
 email: john@johndoe.com
 address: 123, Block No. A-123, Times Square, Bangalore - 123456
-logo: $assets.files.assets.ipsum-logo.svg
-company-slogan: If you can type you can code
+logo: $assets.files.assets.fastn-logo.svg
 website: www.johndoe.com
 
 -- end: site-doc.doc-home
@@ -110,20 +108,20 @@ website: www.johndoe.com
 
 -- string front-sample-code:
 
-\-- import: fastn-community.github.io/business-card
+\-- import: fastn-community.github.io/sunset-business-card
 
 \-- business-card.front: John Doe
 title: Software Developer
 email: john@xyz.com
 address: 123 Anywhere, Any City
-logo: $assets.files.assets.ipsum-logo.svg
+logo: $assets.files.assets.fastn-logo.svg
 
 -- string back-sample-code:
 
-\-- import: fastn-community.github.io/business-card
+\-- import: fastn-community.github.io/sunset-business-card
 
 \-- business-card.back: 
-logo: $assets.files.assets.ipsum-logo.svg
+logo: $assets.files.assets.fastn-logo.svg
 company-slogan: If you can type you can code
 
 
@@ -156,7 +154,6 @@ width if { ftd.device == "mobile" }: fill-container
 
 -- ftd.row:
 width if { ftd.device == "mobile" }: fill-container
-spacing.fixed.px: 24
 
 -- ftd.column:
 width: fill-container
@@ -279,14 +276,13 @@ optional ftd.image-src qr-code:
 optional string website:
 
 -- ftd.column:
-
--- ftd.desktop:
+width: fill-container
+overflow: auto
 
 -- ftd.row:
 width.fixed.px: 700
 height.fixed.px: 350
-background.solid: $card-background-color
-spacing: space-around
+background.solid: #FFFFFF
 
 -- ftd.image:
 if: { front.qr-code != NULL }
@@ -299,74 +295,51 @@ top.px: 12
 z-index: 2
 
 -- ftd.column:
-width.fixed.percent: 50
+width.fixed.percent: 40
 height: fill-container
 align-content: center
-spacing: space-around
+spacing.fixed.px: 16
+background.solid: #EF8435
 
--- ftd.image: $front.logo
-if: { front.logo != NULL }
-max-width.fixed.px: 250
+-- ftd.text: $front.name
+role: $inherited.types.heading-medium
+color: #FFFFFF
+
+-- ftd.text: $front.title
+role: $inherited.types.copy-regular
+color: #FFFFFF
 
 -- end: ftd.column
 
 -- ftd.column:
-width.fixed.percent: 50
+width.fixed.percent: 60
 height: fill-container
 align-content: center
-border-left-width.px: 2
-border-color: $inherited.colors.border-strong
 padding-horizontal.px: 24
-spacing.fixed.px: 8
 
--- ftd.text: $front.name
-color: $inherited.colors.text-strong
-role: $inherited.types.heading-small
-
--- ftd.text: $front.title
-if: { front.title != NULL }
-color: $inherited.colors.text
-role: $inherited.types.copy-regular
-
--- ftd.text: $front.phone-no
-if: { front.phone-no != NULL }
-margin-top.px: 40
-color: $inherited.colors.text
-role: $inherited.types.copy-regular
+-- ftd.column:
+width.fixed.percent: 80
+align-content: left
+spacing.fixed.px: 12
 
 -- ftd.text: $front.email
 if: { front.email != NULL }
-margin-top.px if { front.phone-no == NULL }: 50
-color: $inherited.colors.text
+color: #5D6481
 role: $inherited.types.fine-print
 
--- ftd.column:
-width: fill-container
-border-top-width.px: 1
-border-color: $inherited.colors.border-strong
-align-content: center
-padding-top.px: 8
-margin-top.px: 8
-spacing.fixed.px: 8
-
--- ftd.text: $front.company-name
-if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
-role: $inherited.types.button-medium
-text-align: center
+-- ftd.text: $front.phone-no
+if: { front.phone-no != NULL }
+color: #5D6481
+role: $inherited.types.fine-print
 
 -- ftd.text: $front.address
 if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
+color: #5D6481
 role: $inherited.types.fine-print
-text-align: center
 
 -- ftd.text: $front.website
 if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
+color: #5D6481
 role: $inherited.types.fine-print
 text-align: center
 
@@ -375,105 +348,6 @@ text-align: center
 -- end: ftd.column
 
 -- end: ftd.row
-
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ftd.column:
-width: fill-container
-height.fixed.px: 470
-background.solid: $card-background-color
-spacing: space-around
-
--- ftd.image:
-if: { front.qr-code != NULL }
-src: $front.qr-code
-width.fixed.px: 64
-height.fixed.px: 64
-anchor: parent
-right.px: 12
-top.px: 12
-z-index: 2
-
--- ftd.column:
-width: fill-container
-align-content: center
-padding-vertical.px: 24
-
--- ftd.image: $front.logo
-if: { front.logo != NULL }
-width.fixed.px: 250
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-height: fill-container
-align-content: center
-border-top-width.px: 2
-border-color: $inherited.colors.border-strong
-padding-horizontal.px: 24
-spacing.fixed.px: 8
-
--- ftd.text: $front.name
-color: $inherited.colors.text-strong
-role: $inherited.types.heading-small
-
--- ftd.text: $front.title
-if: { front.title != NULL }
-color: $inherited.colors.text
-role: $inherited.types.copy-regular
-
--- ftd.text: $front.phone-no
-if: { front.phone-no != NULL }
-margin-top.px: 40
-color: $inherited.colors.text
-role: $inherited.types.copy-regular
-
--- ftd.text: $front.email
-if: { front.email != NULL }
-margin-top.px if { front.phone-no == NULL }: 50
-color: $inherited.colors.text
-role: $inherited.types.fine-print
-
--- ftd.column:
-width: fill-container
-border-top-width.px: 1
-border-color: $inherited.colors.border-strong
-align-content: center
-padding-top.px: 8
-margin-top.px: 8
-spacing.fixed.px: 8
-
--- ftd.text: $front.company-name
-if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
-role: $inherited.types.button-medium
-text-align: center
-
--- ftd.text: $front.address
-if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
-role: $inherited.types.fine-print
-text-align: center
-
--- ftd.text: $front.website
-if: { front.address != NULL }
-margin-top.px if { front.phone-no == NULL && front.email == NULL }: 50
-color: $inherited.colors.text
-role: $inherited.types.fine-print
-text-align: center
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.mobile
 
 -- end: ftd.column
 
@@ -503,25 +377,20 @@ optional string website:
 
 -- ftd.column:
 width: fill-container
-
--- ftd.desktop:
+overflow: auto
 
 -- ftd.row:
 width.fixed.px: 700
 height.fixed.px: 350
-background.solid: $card-background-color
+background.solid: #EF8435
 spacing: space-around
 align-content: center
 
 -- ftd.column:
 width: fill-container
 height: fill-container
-margin.px: 50
-border-left-width.px: 8
-border-right-width.px: 8
-border-style: double
-border-color: $inherited.colors.border-strong
 align-content: center
+background.image: $bg-image
 
 -- ftd.image: $back.logo
 if: { back.logo != NULL }
@@ -539,39 +408,15 @@ margin-top.px: 16
 
 -- end: ftd.row
 
--- end: ftd.desktop
-
--- ftd.mobile:
-
--- ftd.column:
-width: fill-container
-height.fixed.px: 470
-background.solid: $card-background-color
-spacing: space-around
-
--- ftd.column:
-width: fill-container
-height: fill-container
-align-content: center
-
--- ftd.image: $back.logo
-if: { back.logo != NULL }
-width.fixed.px: 250
-
--- ftd.text: $back.company-slogan
-if: { back.company-slogan != NULL }
-role: $inherited.types.copy-regular
-color: $inherited.colors.text-strong
-width: fill-container
-text-align: center
-margin-top.px: 16
-
--- end: ftd.column
-
--- end: ftd.column
-
--- end: ftd.mobile
-
 -- end: ftd.column
 
 -- end: back
+
+
+
+
+-- ftd.background-image bg-image:
+src: $assets.files.assets.bg-back.svg
+repeat: no-repeat
+position: center
+
