@@ -22,11 +22,10 @@ favicon: /-/fastn-community.github.io/sunset-business-card/favicon.ico
 - Overview: index.html
 - Create a site with business card: /create/
 - Add business card to your existing site: /integrate/
-;;- Contribute: contribute/
 
 
 
 
 -- fastn.redirects:
 
-/build/: /business-card/create/
+/build/: /sunset-business-card/create/
