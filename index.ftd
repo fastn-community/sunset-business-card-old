@@ -8,7 +8,7 @@
 -- site-doc.doc-home: Sunset Business Card
 current-package: fastn-community.github.io/sunset-business-card
 show-tabs: false
-github-url: https://github.com/fastn-community/business-card
+github-url: https://github.com/fastn-community/sunset-business-card
 site-title: Sunset Business Card
 
 This guide will demonstrate how to make simple business cards using `fastn`. 
