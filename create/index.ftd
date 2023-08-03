@@ -9,7 +9,6 @@ show-tabs: false
 github-url: https://github.com/fastn-community/sunset-business-card
 site-title: Create a site with Sunset Business Card
 
-
 This step-by-step guide will walk you through the process of building your
 business card from scratch, all within your browser. Let's get started!
 
@@ -66,7 +65,7 @@ margin-vertical.px: 16
 
 
 -- site-doc.button: Add template
-link: https://github.com/fastn-community/sunset-card-template/generate
+link: https://github.com/new?template_name=sunset-card-template&template_owner=fastn-community
 open-in-new-tab: true
 
 -- end: ftd.column
@@ -76,7 +75,7 @@ open-in-new-tab: true
 
 -- tf.markdown:
 
-If you are new to GitHub, you will see this page:
+If you are new to GitHub, you will see a page like this:
 
 -- ftd.image:
 src: $assets.files.images.new-user-view.png
@@ -89,7 +88,7 @@ margin-vertical.px: 16
 
 -- tf.markdown: 
 
-If you are an existing GitHub user, you will see this page:
+If you are an existing GitHub user, you will see a page like this:
 
 -- ftd.image:
 src: $assets.files.images.create-your-repo.png
@@ -381,8 +380,8 @@ margin-vertical.px: 16
 -- tf.h3: `Step 6`: Add logo to your business card
 id: upload-your-logo
 
-As you can see, your live site still has the default logo, so let's personalize
-it with your logo.
+With all the details personalized, now let's personalize the business card with 
+your logo.
 
 First, upload your logo to your repository. It's recommended to keep your logo
 file in one location. In our case, we will use the `assets` folder to store the
@@ -475,21 +474,6 @@ border-width.px: 1
 border-color: $inherited.colors.border
 margin-vertical.px: 16
 
-/-- ftd.iframe:
-src: https://gargajit.github.io/business-card/
-width: fill-container
-height.fixed.px: 700
-
-
-/-- sunset-business-card.details: Ajit Garg
-company-name: FIfthTry. Ltd.
-title: Software Developer
-phone-no: +91 12345 99999
-email: john@johndoe.com
-address: 123, Block No. A-123, Times Square, Bangalore - 123456
-logo: $assets.files.assets.ipsum-logo.svg
-company-slogan: If you can type you can code
-website: www.johndoe.com
 
 -- end: ftd.column
 
